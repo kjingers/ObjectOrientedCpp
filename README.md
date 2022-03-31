@@ -100,4 +100,65 @@ void setRadius(Ball &b, double r){
    b.printVolume();
  }
 ```
+## Data Hiding
+main.cpp
+```
+#include <iostream>
+#include "./Circle.h"
+
+using namespace std;
+
+
+int main() {
+  Circle c(5);
+  cout << "Area: " << c.area() << endl;
+  cout << "Perimeter: " << c.perimeter() << endl;
+}
+```
+Circle.h
+```
+#ifndef CIRCLE_H
+#define CIRCLE_H
+
+// Declare all the members of the class here.
+class Circle{
+  double radius;
+  double pi;
+  
+  public:
+  Circle ();
+  Circle(double r);  
+  double area();  
+  double perimeter();
+};
+#endif
+```
+Circle.cpp
+```
+#include "Circle.h"
+
+Circle::Circle(){
+  radius = 0;
+  pi = 3.142;
+}
+
+Circle::Circle(double r){
+  radius = r;
+  pi = 3.142;
+}
+
+double Circle::area(){
+  return pi * radius * radius;
+}
+
+double Circle::perimeter(){
+  return 2 * pi * radius;
+}
+```
+
+## Object Oriented
+
+```
+
+```
 
